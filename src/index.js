@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const axios = require("axios");
+const moment = require("moment");
 const bot = new Discord.Client();
 
 const token = "bot id";
@@ -12,19 +12,12 @@ bot.on("message", async msg => {
   if (msg.content === "days since direct") {
     msg.reply("its been 365 days since last direct");
   }
-
-  if (msg.content === "useless info") {
-    let getJoke = async () => {
-      let response = await axios.get(
-        "https://useless-facts.sameerkumar.website/api"
-      );
-      let joke = response.data;
-      return joke;
-    };
-    let jokeValue = await getJoke();
-    console.log(jokeValue);
-    msg.reply(`here a fact: ${jokeValue.data}`);
+	
+  moment("20190912", "YYYYMMDD").fromNow()
+  
+  bot.on("message", async msg => {
+    if (msg.content === "days since direct") {
+      msg.reply("its been 365 days since last direct");
   }
-});
-
+);
 bot.login(token);
