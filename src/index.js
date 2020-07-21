@@ -14,12 +14,11 @@ bot.on("message", async msg => {
   if (msg.content === "days since direct") {
     msg.channel.send(directdays);
   }
-
+ });
   bot.on("message", async msg => {
     if (msg.content === "days since mini direct") {
       msg.channel.send(directminidays);
     }
-  });
   });
   bot.login(token);
 
