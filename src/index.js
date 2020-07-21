@@ -20,5 +20,6 @@ bot.on("message", async msg => {
       msg.channel.send(directminidays);
     }
   });
+  });
   bot.login(token);
-});
+
